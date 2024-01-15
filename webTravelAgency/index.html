@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/webTravelAgency/style.css" />
+    <title>Travel Agency Landing Page</title>
+  </head>
+  <body>
+    <div class="wrapper">
+    <header>
+        <nav class="navbar">
+          <div class="menu-icon">☰</div>
+          <a class="logo">
+            <img src="/webTravelAgency/images/logo.png" alt="Jadoo logo" />
+          </a>
+          <div class="nav-links">
+            <button class="close-btn">&times;</button>
+            <a href="#">Destinations</a>
+            <a href="#">Hotels</a>
+            <a href="#">Flights</a>
+            <a href="#">Bookings</a>
+          </div>
+          <div class="nav-actions">
+            <button class="btn btn-login">Login</button>
+              <button class="btn btn-language">Language</button>
+          </div>
+        </nav>
+    </header>
+
+    <main>
+      <section class="first-page-container">
+          <div class="left-container">
+            <h5 class="header-sub-title">Best Destinations around the world</h5>
+            <h1 class="title-first">Travel, enjoy and live a new and full life</h1>
+            <h3 class="header-description">
+              Built Wicket longer admire do barton vanity itself do in it.
+              Preferred to sportsmen it engrossed listening. Park gate sell they
+              west hard for the.
+            </h3>
+            <div class="buttons-container">
+              <button class="btn btn-primary">Find out more</button>
+              <button class="btn btn-secondary">
+                <img
+                  class="play-icon"
+                  src="/webTravelAgency/images/play_icon.png" alt="Play button icon"
+                ></img>
+                Play demo
+              </button>
+            </div>
+          </div>
+          <div class="right-container">
+            <img
+              class="img-traveller"
+              src="/webTravelAgency/images/header_traveller.png"
+              alt="Girl
+            traveller"
+            />
+        </div>
+      </section>
+    </div>
+
+      <section class="services-container">
+        <h5>CATEGORY</h5>
+        <h1 class="services-header">We Offer Best Services</h1>
+        <div class="card-container">
+          <div class="service-card">
+              <img src="path-to-your-icon-flight.png" alt="Best Flights">
+              <h3>Best Flights</h3>
+              <p>Engrossed listening. Park gate sell they west hard for the.</p>
+          </div>
+          <div class="service-card">
+              <img src="path-to-your-icon-weather.png" alt="Calculated Weather">
+              <h3>Calculated Weather</h3>
+              <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+          </div>
+          <div class="service-card">
+              <img src="path-to-your-icon-events.png" alt="Local Events">
+              <h3>Local Events</h3>
+              <p>Barton vanity itself do in it. Prefers to men it engrossed listening.</p>
+          </div>
+          <div class="service-card">
+              <img src="path-to-your-icon-customisation.png" alt="Customisation">
+              <h3>Customisation</h3>
+              <p>We deliver outsourced aviation services for military customers.</p>
+          </div>
+      </div>
+     </section>
+
+<!-- 
+      <section>
+        <h2>About Us</h2>
+        <p>
+          This section can contain information about your website or company.
+        </p>
+      </section>
+      <section>
+        <h2>Services</h2>
+        <p>Details about the services offered.</p>
+      </section> -->
+      
+    </main>
+
+    <!-- <footer>
+      <p>© 2024 Example Website</p>
+    </footer> -->
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+  const navbar = document.querySelector('.navbar'); // Common parent element
+  navbar.addEventListener('click', (event) => {
+    const menuIcon = event.target.closest('.menu-icon');
+    const closeButton = event.target.closest('.close-btn');
+    const sidebar = document.querySelector('.nav-links');
+
+    // Toggle the sidebar if the menu icon or close button is clicked
+    if (menuIcon || closeButton) {
+      sidebar.classList.toggle('sidebar-open');
+    }
+
+    // Close the sidebar if clicked outside of it
+    if (!sidebar.contains(event.target) && !menuIcon) {
+      sidebar.classList.remove('sidebar-open');
+    }
+  });
+});
+
+  </script>
+</html>

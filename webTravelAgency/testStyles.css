@@ -1,0 +1,328 @@
+/* Base styles - apply to mobile and all sizes above */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #F1A501;
+    --secondary-color: #DD6A52;
+    --accent-color: #006380;
+    --background-color-1: #FFF1DA;
+    --background-color-2: #F9F7FE;
+    --text-primary-color: #181E4B;
+    --text-secondary-color: #5E6282;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: var(--text-primary-color)
+}
+
+h1 {
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(1rem, 1.125vw, 1.125rem);
+    margin-bottom: 1rem;
+    color: var(--text-secondary-color)
+}
+
+h3 {
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    margin-bottom: 1rem;
+    color: var(--text-secondary-color);
+    font-weight: normal;
+}
+
+header {
+    padding: 1rem 0;
+    height: auto;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+/* Navbar styles */
+.navbar {
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.menu-icon {
+    display: block;
+    align-self: flex-start;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start off-screen to the left */
+    width: 250px; /* Sidebar width */
+    height: 100%;
+    background-color: var(--background-color-2); /* Sidebar background color */
+    transition: left 0.3s;
+    z-index: 1001;
+    padding-top: 20px;
+}
+
+.nav-links a {
+    display: block;
+    text-align: left;
+    padding: 15px;
+    color: var(--text-primary-color);
+}
+
+.nav-links a:hover {
+    background-color: var(--secondary-color);
+}
+
+.sidebar-open {
+    left: 0; /* Slide in the sidebar */
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid var(--text-secondary-color);
+}
+
+.close-btn {
+    font-size: 2rem;
+    color: var(--text-primary-color);
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-align: right;
+    display: block;
+}
+
+.nav-actions {
+    align-self: flex-end;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.btn {
+    padding: 10px 15px;
+    height: 42px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: var(--background-color-2);
+    width: 86px;
+}
+
+/* Page 1 content */
+.header-content {
+    margin-top: 5rem;
+    padding-right: 0%;
+}
+
+.header-left-container {
+    width: 90%;
+}
+
+.header-sub-title {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.title-first {
+    width: 85%;
+    background-image: url(/webTravelAgency/images/title_decore.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    border-radius: 20px;
+    margin-top: 35px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--background-color-2);
+    width: 166px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary-color);
+    font-weight: 700;
+    font-size: 0;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.play-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.btn-language,
+.logo,
+.header-right-container {
+    display: none;
+}
+
+/* Tablet and Desktop Styles */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    header {
+        background-image: url(/webTravelAgency/images/header_decore2.png), url(/webTravelAgency/images/header_decore.png);
+        background-repeat: no-repeat, no-repeat;
+        background-position: left top, right top;
+        background-size: contain;
+        max-height: 100%;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .header-left-container {
+        width: 50%;
+    }
+
+    .header-right-container {
+        display: block;
+        width: 50%;
+    }
+
+    .img-traveller {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .menu-icon,
+    .close-btn {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin-left: 10%;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        position: static;
+        gap: 2rem;
+        padding: 0;
+        height: auto;
+        background-color: transparent; /* Remove the background color */
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        width: auto;
+        display: flex;
+        justify-content: flex-start;
+        font-weight: 700;
+        color: var(--text-primary-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        padding: 0;
+    }
+
+    .nav-actions {
+        align-items: flex-end;
+        position: static;
+        margin-right: 5%;
+        margin-left: auto;
+    }
+
+    .btn-language {
+        display: inline-block;
+        background-color: var(--background-color-2);
+        color: var(--text-primary-color);
+        border: solid var(--primary-color) 1px;
+        width: 9rem;
+        margin-left: 0.5rem;
+    }
+
+    .header-left-container {
+        width: 50%;
+    }
+
+    .header-right-container {
+        display: block;
+        width: 50%;
+    }
+
+    .img-traveller {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+}
+
+
+/* Desktop Styles */
+@media screen and (min-width: 1100px) {
+    .navbar {
+        margin: 0;
+    }
+
+    .logo {
+        display: flex;
+        margin-left: 10%;
+        margin-right: auto; /* Push everything else to the right */
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 30%;
+    }
+
+    .btn-secondary {
+        font-size: 1rem;
+    }
+
+    .play-icon {
+        margin-right: 0.9rem;
+    }
+
+}
+

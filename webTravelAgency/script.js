@@ -6,5 +6,4 @@ function toggleMenu() {
     } else {
         links.style.display = 'block';
     }
-    // cvcbcvbc
 }
